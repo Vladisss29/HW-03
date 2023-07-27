@@ -1,10 +1,22 @@
-money = int(input("Введите сумму, которую хотите положить под проценты:"))
-per_cent = {'ТКБ': 5.6, 'СКБ': 5.9, 'ВТБ': 4.28, 'СБЕР': 4.0}
-ТКБ = int((per_cent['ТКБ']) * (money/100))
-СКБ = int((per_cent['СКБ']) * (money/100))
-ВТБ = int((per_cent['ВТБ']) * (money/100))
-СБЕР = int((per_cent['СБЕР']) * (money/100))
-
-deposit = [ТКБ, СКБ, ВТБ, СБЕР]
-print("Сумма накопленная за год в каждом из банков:", deposit)
-print("Ваша выгода со вклада -", max(deposit))
+amount = 0
+tickets = int(input("Введите количество билетов:"))
+for age in range(tickets):
+    age = int(input("Введите Ваш возраст:"))
+    if age <= 18:
+        amount += 0
+    elif age >= 18 and age <= 25:
+        amount += 990
+    elif age > 25:
+        amount += 1390
+if amount == 0:
+    print("Вход бесплатный")
+else:
+    print("Количество ваших билетов:", tickets, "шт.")
+if tickets > 3:
+    discount = amount / 100 * 10
+    print("Ваша скидка составляет:", "%.2f" % discount, "руб.")
+    print("К оплате со скидкой:", "%.2f" % (amount-discount), "руб.")
+if tickets < 4:
+    Nodiscount = amount
+    print("Скидка составляет:", "%.2f" % Nodiscount, "руб.")
+    print("К оплате:", "%.2f" % Nodiscount, "руб.")
